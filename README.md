@@ -1,23 +1,20 @@
-MySQL
-===============
+# MySQL
 
-Getting started: 
+## Getting started
 - http://www.sqlteaching.com/
-- https://www.codecademy.com/courses/learn-sql
+- https://www.codecademy.com/learn/learn-sql
 
-Related tutorials:
+### Related tutorials
 - [MySQL-CLI](https://www.youtube.com/playlist?list=PLfdtiltiRHWEw4-kRrh1ZZy_3OcQxTn7P)
 - [Analyzing Business Metrics](https://www.codecademy.com/learn/sql-analyzing-business-metrics)
-- [SQL joins infografic](https://lh4.googleusercontent.com/-RdjzcoAwBYg/UxTXWGJHgoI/AAAAAAAACrs/Gqbu6zyksgo/w852-h670/sql-joins.jpg)
+- [SQL joins infografic](https://www.codeproject.com/Articles/33052/Visual-Representation-of-SQL-Joins)
 
-Tools:
+## Tools
+- [TablePlus](https://tableplus.io/)
 - [DataGrip](https://www.jetbrains.com/datagrip/)
-- [Sequel Pro](http://www.sequelpro.com/)
+- [Sequel Pro](http://www.sequelpro.com/) (abandoned)
 
-
-Commands
------------
-
+## Commands
 Access monitor: `mysql -u [username] -p;` (will prompt for password)
 
 Show all databases: `show databases;`
@@ -93,10 +90,7 @@ Import a database dump (more info [here](http://stackoverflow.com/a/21091197/181
 
 Logout: `exit;`
 
-
-Aggregate functions
------------
-
+## Aggregate functions
 Select but without duplicates: `SELECT distinct name, email, acception FROM owners WHERE acception = 1 AND date >= 2015-01-01 00:00:00`
 
 Calculate total number of records: `SELECT SUM([column]) FROM [table];`
@@ -111,10 +105,7 @@ Get average value: `SELECT AVG([column]) FROM [table];`
 
 Get rounded average value and group by `[category-column]`: `SELECT [category-column], ROUND(AVG([column]), 2) FROM [table] GROUP BY [category-column];`
 
-
-Multiple tables
------------
-
+## Multiple tables
 Select from multiple tables: `SELECT [table1].[column], [table1].[another-column], [table2].[column] FROM [table1], [table2];`
 
 Combine rows from different tables: `SELECT * FROM [table1] INNER JOIN [table2] ON [table1].[column] = [table2].[column];`
@@ -123,17 +114,12 @@ Combine rows from different tables but do not require the join condition: `SELEC
 
 Rename column or table using an _alias_: `SELECT [table1].[column] AS '[value]', [table2].[column] AS '[value]' FROM [table1], [table2];`
 
-
-Users functions
------------
-
+## Users functions
 List all users: `SELECT User,Host FROM mysql.user;`
 
 Create new user: `CREATE USER 'username'@'localhost' IDENTIFIED BY 'password';`
 
 Grant `ALL` access to user for `*` tables: `GRANT ALL ON database.* TO 'user'@'localhost';`
 
-
-Find out the IP Address of the Mysql Host
------------
+## Find out the IP Address of the Mysql Host
 `SHOW VARIABLES WHERE Variable_name = 'hostname';` ([source](http://serverfault.com/a/129646))
